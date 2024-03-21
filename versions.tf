@@ -12,4 +12,5 @@ terraform {
 
 provider "azurerm" {
   features {}
+  region = var.azurerm_region
 }
