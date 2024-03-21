@@ -1,14 +1,13 @@
-# Create a resource group
+# Create a ressource group
 resource "azurerm_resource_group" "example" {
-  name     = "example-resources"
-  location = "West Europe"
+  name                     = var.ressource-group-name
+  location                 = var.location
+  account_tier             = "Standard"
 }
 
 # Create a storage account
 resource "azurerm_storage_account" "example" {
-  name                     = "azuretp3"
-  resource_group_name      = azurerm_resource_group.example.name
-  location                 = azurerm_resource_group.example.location
+  name                     = var.storage-account-name
+  location                 = var.location
   account_tier             = "Standard"
-  account_replication_type = "LRS"
 }
