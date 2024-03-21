@@ -1,7 +1,7 @@
 variable "location" {
     description = "Azure region to deploy the ressources."
     type        = string
-    default     = "us-west-2"
+    default     = "westus2"
 }
 
 variable "resource-group-name" {
