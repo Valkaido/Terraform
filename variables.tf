@@ -7,11 +7,11 @@ variable "location" {
 variable "resource-group-name" {
     description = "Name of the resource group"
     type        = string
-    default     = "tp3-resource-group"
+    default     = "tp3resourcegroup"
 }
 
 variable "storage-account-name" {
     description = "Name of the storage account"
     type        = string
-    default     = "tp3-account-storage"
+    default     = "tp3accountstorage"
 }
