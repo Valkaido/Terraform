@@ -43,6 +43,7 @@ resource "azurerm_network_interface" "example" {
 resource "azurerm_linux_virtual_machine" "example" {
   name                = "example-machine"
   resource_group_name = azurerm_resource_group.example.name
+  admin_username      = "azureuser"
   location            = var.location
   size                = "Standard_F2"
   network_interface_ids = [
