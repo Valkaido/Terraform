@@ -52,7 +52,7 @@ resource "azurerm_linux_virtual_machine" "example" {
 
   admin_ssh_key {
     username   = "adminuser"
-    public_key = file("${path.module}/id_rsa.pub")  # Corrected path to SSH public key
+    public_key = file("/home/azureuser/.ssh/id_rsa.pub")
   }
 
   os_disk {
