@@ -1,19 +1,13 @@
-variable "azurerm_region" {
-  description = "Azure region"
-  type        = string
-  default     = "us-west-2"
-}
-
 variable "location" {
     description = "Azure region to deploy the ressources."
     type        = string
-    default     = "East US"
+    default     = "us-west-2"
 }
 
-variable "ressource-group-name" {
-    description = "Name of the ressource group"
+variable "resource-group-name" {
+    description = "Name of the resource group"
     type        = string
-    default     = "tp3-ressource-group"
+    default     = "tp3-resource-group"
 }
 
 variable "storage-account-name" {
