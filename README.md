@@ -10,6 +10,25 @@ Le client de Move2Cloud souhaite migrer son infrastructure vers le cloud. Nous a
   -  Azure CLI
   -  Un compte Microsoft Azure
   -  Une machine virtuelle Linux Ubuntu 22 LTS
+## Contenu du Repository
+  -  **main.tf**: Fichier principal qui permet de créer les ressources vers Azure. Cet exemple permet de créer un group de ressource.
+```
+# Create a resource group
+resource "azurerm_resource_group" "example" {
+  name                     = "tp3resourcegroup"
+  location                 = var.location
+}
+```
+  -  **README.md**: Fichier de documentation expliquant le projet et fournissant des instructions pour le configurer et l'exécuter.
+  -  **variables.tf**: Fichier utilisé par **main.tf** qui permet de créer des variables. Cet exemple permet de créer une variable location qui défini la région dans laquelle les ressources seront déployés.
+```
+variable "location" {
+    description = "Azure region to deploy the ressources."
+    type        = string
+    default     = "westus2"
+}
+```
+  -  **versions.tf**: Fichier qui permet de définir les providers utilisés par Terraform, dans notre cas c'est Azure.
 ## Configuration
 ### Etapes a réalisées sur la machine virtuelle principale
 ### Installation de Azure CLI
