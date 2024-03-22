@@ -20,7 +20,7 @@ resource "azurerm_resource_group" "example" {
 }
 ```
   -  **README.md**: Fichier de documentation expliquant le projet et fournissant des instructions pour le configurer et l'exécuter.
-  -  **variables.tf**: Fichier utilisé par **main.tf** qui permet de créer des variables. Cet exemple permet de créer une variable location qui défini la région dans laquelle les ressources seront déployés.
+  -  **variables.tf**: Fichier utilisé par **main.tf** qui permet de créer des variables. Cet exemple permet de créer une variable "**location**" qui défini la région dans laquelle les ressources seront déployés.
 ```
 variable "location" {
     description = "Azure region to deploy the ressources."
