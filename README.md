@@ -92,3 +92,22 @@ export ARM_CLIENT_ID=<appI>
 export ARM_CLIENT_SECRET=<password>
 export ARM_TENANT_ID=<tenant>
 ```
+## Utilisation du projet
+### Clonage du repository
+```
+git clone https://github.com/Valkaido/Terraform/
+cd Terraform
+```
+### Commandes a réaliser
+Il faut exécuter "**terraform init**" à la racine du projet (une seule fois seulement).
+```
+terraform init
+```
+Si vous modifiez le fichier main.tf ou variables.tf ou versions.tf, il faut exécuter cette commande à chaque fois :
+```
+terraform plan
+```
+Et pour valider vos changements
+```
+terraform apply
+```
