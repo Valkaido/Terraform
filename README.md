@@ -9,9 +9,9 @@ Le client de Move2Cloud souhaite migrer son infrastructure vers le cloud. Nous a
   -  Terraform
   -  Azure CLI
   -  Un compte Microsoft Azure
-  -  Une machine virtuelle Linux Ubuntu 22 LTS qui servira de serveur Terraform 
+  -  Une machine virtuelle Linux Ubuntu 22 LTS
 ## Configuration
-### Commandes a réalisées sur la machine virtuelle qui héberge Terraform
+### Etapes a réalisées sur la machine virtuelle principale
 ### Installation de Azure CLI
 ```
 curl -sL https://aka.ms/InstallAzureCLIDeb | sudo bash
@@ -44,4 +44,32 @@ sudo apt-get install terraform
 ## Vérifier l'installation de Terraform
 ```
 terraform -help
+```
+## Connexion à Azure
+```
+az login
+```
+## Récupération du subscription ID
+```
+az account list --query "[].{name:name, subscriptionId:id}"
+az ad sp create-for-rbac --role="Contributor"
+--scopes="/subscriptions/<YourSubscriptionId>"
+```
+### Résultats des commandes au format json
+```
+{
+  "appId": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx",
+  "displayName": "azure-cli-2020-04-01-10-31-17",
+  "name": "http://azure-cli-2020-04-01-10-31-17",
+  "password": "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx",
+  "tenant": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx"
+}
+```
+### Set des variables d'environnement
+Il faut modifier les parametrès entre "<>" par vos valeurs à vous
+```
+export ARM_SUBSCRIPTION_ID=<SubscriptionId>
+export ARM_CLIENT_ID=<appI>
+export ARM_CLIENT_SECRET=<password>
+export ARM_TENANT_ID=<tenant>
 ```
